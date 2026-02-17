@@ -1,0 +1,71 @@
+/* Layout & Grid Systems */
+
+/* Grid System */
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Flex Utilities */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: block !important;
+    }
+
+    .show-mobile {
+        display: none !important;
+    }
+
+    .hero-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 767px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero-layout {
+        text-align: center;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: var(--spacing-md);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Mobile Menu Specific Styles */
+    .mobile-link {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+
+    .mobile-link::after {
+        display: none;
+        /* Hide underline in mobile menu */
+    }
+}
